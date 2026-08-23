@@ -42,31 +42,39 @@ reviewer reading a list of titles next to performance figures will draw a
 conclusion about what the app is for. Keep it that way when adding results:
 "Namco System 22 holds full speed", never the name of the game that proved it.
 
-## Publishing — read this before pushing
+## Publishing
 
-**There are two repos on the account and only one of them is the website.**
+`origin` is `sludgesoft-a11y/sludgesoft-a11y.github.io`, which is the live site
+at <https://sludgesoft-a11y.github.io/>. Push `main` and Pages redeploys within
+a minute or two. Pages config: **Settings → Pages** → Source *Deploy from a
+branch*, branch `main`, folder `/ (root)`.
 
-- `sludgesoft-a11y/sludgesoft-a11y.github.io` — **this is the live site**, at
-  <https://sludgesoft-a11y.github.io/>. GitHub serves a user site only from a
-  repo named exactly `<username>.github.io`.
-- `sludgesoft-a11y/sludgesoft.github.io` — a misnamed spare. Pages is not
-  enabled on it. Because the name does not match the account handle, Pages would
-  serve it as a *project* site under `/sludgesoft.github.io/`, not at the root.
+### Pushing needs the sludgesoft-a11y account
 
-This working copy's `origin` points at the **misnamed** one. Repoint it before
-pushing, or the site will not update:
+This machine has two GitHub identities. Windows Credential Manager holds
+**SludgeSlug**, which has no write access here — a plain `git push` fails with
+`Permission ... denied to SludgeSlug` and a 403. The GitHub CLI is separately
+logged in as **sludgesoft-a11y**, so push with its token, for that command only:
 
 ```bash
-git remote set-url origin https://github.com/sludgesoft-a11y/sludgesoft-a11y.github.io.git
+git -c credential.helper= -c credential.helper="!gh auth git-credential" push origin main
 ```
 
-Then push. The live repo already has a `main` with its own history, so the first
-push from here needs reconciling — check `git log origin/main` before choosing
-between a merge and a force push.
+The empty first `credential.helper` is load-bearing: helpers form a chain, and
+without it the system-wide `manager` helper answers first with the wrong
+account. Do not run `gh auth setup-git` to avoid typing this — it makes
+sludgesoft-a11y the credential for all of github.com and breaks pushes to
+SludgeSlug's own repos.
 
-Pages settings for the live repo: **Settings → Pages** → Source *Deploy from a
-branch*, branch `main`, folder `/ (root)`. Pushing to `main` redeploys within a
-minute or two.
+### Two other repos worth knowing about
+
+- `sludgesoft-a11y/sludgesoft.github.io` — a misnamed empty spare, safe to
+  delete. Its name does not match the account handle, so Pages would serve it
+  under `/sludgesoft.github.io/` rather than at the root. It was this working
+  copy's `origin` for a while, which meant nothing published.
+- `main-standalone-old` — a local-only branch holding the site's original
+  unrelated history, kept after `main` was rebuilt on top of the live repo's.
+  Delete it once you are happy: `git branch -D main-standalone-old`.
 
 ## Notes
 
