@@ -4,8 +4,11 @@ A virtual lightgun arcade cabinet for Meta Quest. Your Touch controller becomes
 an arcade gun, and the game plays on a large screen floating in front of you.
 
 **QuestGun is not an emulator and ships with no games.** It loads emulator cores
-and game files that you supply. A fresh install cannot do anything until you add
-them — see [Getting started](#2-getting-started).
+and game files that you supply — see [Getting started](#2-getting-started).
+
+There is one exception: a built-in **demo range**, a shooting gallery drawn by
+the app itself, so a fresh install has something to aim at before you have added
+anything. See [Trying it without a game](#trying-it-without-a-game).
 
 ---
 
@@ -139,10 +142,31 @@ behind the panel.
 | GUN HAND | Left or right handed |
 | SHOW GUN | Draw the gun model in your hand |
 | LASER SIGHT | Show the red aiming dot |
+| EMULATOR CROSSHAIR | Show the core's own crosshair as well as the laser dot |
+| DEMO RANGE | The built-in shooting gallery — see [Trying it without a game](#trying-it-without-a-game) |
 | RESET GAME | Restart the current game |
 | EXIT QUESTGUN | Quit |
 
 Settings are not saved between launches yet.
+
+### Trying it without a game
+
+Turn **DEMO RANGE** on in the menu and the screen becomes a tin can alley:
+bottles on a back rail, cans on a front one.
+
+| Control | Action |
+|---|---|
+| Trigger | Shoot |
+| Grip | Stand everything back up |
+
+It is drawn by QuestGun itself — no core, no game files, nothing to install — so
+it works on a fresh install, and it is the quickest way to check that your aim
+is calibrated. If the laser dot sits on a bottle and the shot misses, your
+**GUN PITCH** and **GUN YAW** need trimming; a hit means the aiming line and the
+dot agree.
+
+The range only runs while no game is loaded. With a core running, the trigger
+and grip belong to the game as usual.
 
 ### Quick adjustments without the menu
 
@@ -256,7 +280,8 @@ loading anything. Pick something else.
 
 ## 6. What this app does not do
 
-- It contains no games, no BIOS files and no emulator cores
+- It contains no games, no BIOS files and no emulator cores — the built-in
+  demo range is the app's own artwork, not an emulated game
 - It does not download anything for you
 - It does not save your settings between launches yet
 - It cannot make a game run faster than the headset's processor allows

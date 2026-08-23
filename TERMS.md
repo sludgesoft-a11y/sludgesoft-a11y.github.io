@@ -53,11 +53,14 @@ loaded at runtime.
 QuestGun is **not** an emulator, and it contains no emulator. It contains no
 games, no game data, no ROM images, no disc images, no BIOS or firmware images,
 and no copyrighted material belonging to any hardware or software rights holder.
+The built-in demo range is drawn procedurally by the Application from our own
+original artwork; it emulates nothing and loads no files.
 
 ## 4. Content is supplied by you, and is your responsibility
 
-QuestGun ships with no content whatsoever. To use it you must obtain and install
-two things yourself: emulator core files, and game data.
+Apart from a built-in demo range which is our own original work, QuestGun ships
+with no content. To play anything else you must obtain and install two things
+yourself: emulator core files, and game data.
 
 **You are solely responsible for the emulator cores, game data, BIOS or firmware
 images and any other files you obtain, install or use with QuestGun, and for

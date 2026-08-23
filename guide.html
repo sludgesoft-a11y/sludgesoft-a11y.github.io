@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>QuestGun — Player&#x27;s Guide</title>
-<meta name="description" content="How to set up and play QuestGun: adding emulator cores and games, controls, aiming calibration, the in-VR menu, and troubleshooting.">
+<meta name="description" content="How to set up and play QuestGun: the built-in demo range, adding emulator cores and games, controls, aiming calibration, the in-VR menu, and troubleshooting.">
 <meta property="og:title" content="QuestGun — Player&#x27;s Guide">
-<meta property="og:description" content="How to set up and play QuestGun: adding emulator cores and games, controls, aiming calibration, the in-VR menu, and troubleshooting.">
+<meta property="og:description" content="How to set up and play QuestGun: the built-in demo range, adding emulator cores and games, controls, aiming calibration, the in-VR menu, and troubleshooting.">
 <meta property="og:type" content="article">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 108 108'%3E%3Crect width='108' height='108' fill='%2305080d'/%3E%3Cg fill='none' stroke='%232ec4ba' stroke-width='6'%3E%3Cpath d='M54 33a21 21 0 0 1 14.85 6.15'/%3E%3Cpath d='M75 54a21 21 0 0 1-6.15 14.85'/%3E%3Cpath d='M54 75a21 21 0 0 1-14.85-6.15'/%3E%3Cpath d='M33 54a21 21 0 0 1 6.15-14.85'/%3E%3C/g%3E%3Ccircle cx='54' cy='54' r='4.5' fill='%23ff3626'/%3E%3C/svg%3E">
 <link rel="stylesheet" href="style.css">
@@ -43,7 +43,8 @@
 <main id="main" class="wrap doc">
 <h1 id="questgun-players-guide">QuestGun — Player's Guide</h1>
 <p>A virtual lightgun arcade cabinet for Meta Quest. Your Touch controller becomes an arcade gun, and the game plays on a large screen floating in front of you.</p>
-<p><strong>QuestGun is not an emulator and ships with no games.</strong> It loads emulator cores and game files that you supply. A fresh install cannot do anything until you add them — see <a href="#2-getting-started">Getting started</a>.</p>
+<p><strong>QuestGun is not an emulator and ships with no games.</strong> It loads emulator cores and game files that you supply — see <a href="#2-getting-started">Getting started</a>.</p>
+<p>There is one exception: a built-in <strong>demo range</strong>, a shooting gallery drawn by the app itself, so a fresh install has something to aim at before you have added anything. See <a href="#trying-it-without-a-game">Trying it without a game</a>.</p>
 <hr>
 <h2 id="1-quick-reference">1. Quick reference</h2>
 <div class="tablewrap">
@@ -129,12 +130,30 @@ rom = mygame.zip</code></pre>
 <tr><td>GUN HAND</td><td>Left or right handed</td></tr>
 <tr><td>SHOW GUN</td><td>Draw the gun model in your hand</td></tr>
 <tr><td>LASER SIGHT</td><td>Show the red aiming dot</td></tr>
+<tr><td>EMULATOR CROSSHAIR</td><td>Show the core's own crosshair as well as the laser dot</td></tr>
+<tr><td>DEMO RANGE</td><td>The built-in shooting gallery — see <a href="#trying-it-without-a-game">Trying it without a game</a></td></tr>
 <tr><td>RESET GAME</td><td>Restart the current game</td></tr>
 <tr><td>EXIT QUESTGUN</td><td>Quit</td></tr>
 </tbody>
 </table>
 </div>
 <p>Settings are not saved between launches yet.</p>
+<h3 id="trying-it-without-a-game">Trying it without a game</h3>
+<p>Turn <strong>DEMO RANGE</strong> on in the menu and the screen becomes a tin can alley: bottles on a back rail, cans on a front one.</p>
+<div class="tablewrap">
+<table>
+<thead><tr>
+<th>Control</th>
+<th>Action</th>
+</tr></thead>
+<tbody>
+<tr><td>Trigger</td><td>Shoot</td></tr>
+<tr><td>Grip</td><td>Stand everything back up</td></tr>
+</tbody>
+</table>
+</div>
+<p>It is drawn by QuestGun itself — no core, no game files, nothing to install — so it works on a fresh install, and it is the quickest way to check that your aim is calibrated. If the laser dot sits on a bottle and the shot misses, your <strong>GUN PITCH</strong> and <strong>GUN YAW</strong> need trimming; a hit means the aiming line and the dot agree.</p>
+<p>The range only runs while no game is loaded. With a core running, the trigger and grip belong to the game as usual.</p>
 <h3 id="quick-adjustments-without-the-menu">Quick adjustments without the menu</h3>
 <p><strong>Hold Left grip</strong> and the sticks retune the setup directly. Nothing reaches the game while you hold it.</p>
 <div class="tablewrap">
@@ -230,7 +249,7 @@ rom = mygame.zip</code></pre>
 <hr>
 <h2 id="6-what-this-app-does-not-do">6. What this app does not do</h2>
 <ul>
-  <li>It contains no games, no BIOS files and no emulator cores</li>
+  <li>It contains no games, no BIOS files and no emulator cores — the built-in demo range is the app's own artwork, not an emulated game</li>
   <li>It does not download anything for you</li>
   <li>It does not save your settings between launches yet</li>
   <li>It cannot make a game run faster than the headset's processor allows</li>
