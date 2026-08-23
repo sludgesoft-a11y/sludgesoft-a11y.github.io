@@ -122,21 +122,37 @@ rom = mygame.zip</code></pre>
 <tr><td>RESUME</td><td>Close the menu</td></tr>
 <tr><td>LOAD ROM</td><td>Browse and load a game</td></tr>
 <tr><td>LOAD CORE</td><td>Switch emulator core, keeping the current game</td></tr>
+<tr><td>DEMO RANGE</td><td>The built-in shooting gallery — see <a href="#trying-it-without-a-game">Trying it without a game</a></td></tr>
 <tr><td>RECENTRE SCREEN</td><td>Put the screen where you are looking</td></tr>
 <tr><td>SCREEN DISTANCE</td><td>How far away the screen sits (1–12 m)</td></tr>
 <tr><td>SCREEN WIDTH</td><td>How large the screen is (1–16 m)</td></tr>
 <tr><td>SCREEN YAW TRIM</td><td>Slide the screen left or right around you</td></tr>
+<tr><td>GUN SETUP</td><td>Opens the gun page below</td></tr>
+<tr><td>RESET GAME</td><td>Restart the current game</td></tr>
+<tr><td>UNLOAD ALL</td><td>Drop the core and the game, and clear any message on the screen</td></tr>
+<tr><td>EXIT QUESTGUN</td><td>Quit</td></tr>
+</tbody>
+</table>
+</div>
+<h3 id="the-gun-page">The gun page</h3>
+<p>Everything about the gun lives behind <strong>GUN SETUP</strong>, so the main list stays short. <strong>&lt; BACK</strong> returns.</p>
+<div class="tablewrap">
+<table>
+<thead><tr>
+<th>Menu item</th>
+<th>What it does</th>
+</tr></thead>
+<tbody>
 <tr><td>GUN PITCH / GUN YAW</td><td>Aim calibration</td></tr>
 <tr><td>GUN HAND</td><td>Left or right handed</td></tr>
 <tr><td>SHOW GUN</td><td>Draw the gun model in your hand</td></tr>
 <tr><td>LASER SIGHT</td><td>Show the red aiming dot</td></tr>
 <tr><td>EMULATOR CROSSHAIR</td><td>Show the core's own crosshair as well as the laser dot</td></tr>
-<tr><td>DEMO RANGE</td><td>The built-in shooting gallery — see <a href="#trying-it-without-a-game">Trying it without a game</a></td></tr>
-<tr><td>RESET GAME</td><td>Restart the current game</td></tr>
-<tr><td>EXIT QUESTGUN</td><td>Quit</td></tr>
 </tbody>
 </table>
 </div>
+<h3 id="if-something-is-stuck">If something is stuck</h3>
+<p><strong>UNLOAD ALL</strong> is the way out of a bad state. It drops whatever core and game are loaded, clears the message on the screen, and leaves you at the idle panel with the menu open. Nothing on your headset is deleted — your cores and games stay exactly where they are.</p>
 <p>Settings are not saved between launches yet.</p>
 <h3 id="trying-it-without-a-game">Trying it without a game</h3>
 <p>Turn <strong>DEMO RANGE</strong> on in the menu and the screen becomes a tin can alley: bottles on a back rail, cans on a front one.</p>
@@ -152,7 +168,8 @@ rom = mygame.zip</code></pre>
 </tbody>
 </table>
 </div>
-<p>It is drawn by QuestGun itself — no core, no game files, nothing to install — so it works on a fresh install, and it is the quickest way to check that your aim is calibrated. If the laser dot sits on a bottle and the shot misses, your <strong>GUN PITCH</strong> and <strong>GUN YAW</strong> need trimming; a hit means the aiming line and the dot agree.</p>
+<p>Bottles break and cans ring when you hit them, and the debris falls. Shoot everything and the range says so; the grip stands it all back up.</p>
+<p>It is drawn and voiced by QuestGun itself — no core, no game files, nothing to install — so it works on a fresh install, and it is the quickest way to check that your aim is calibrated. If the laser dot sits on a bottle and the shot misses, your <strong>GUN PITCH</strong> and <strong>GUN YAW</strong> need trimming (they are under <strong>GUN SETUP</strong>); a hit means the aiming line and the dot agree.</p>
 <p>The range only runs while no game is loaded. With a core running, the trigger and grip belong to the game as usual.</p>
 <h3 id="quick-adjustments-without-the-menu">Quick adjustments without the menu</h3>
 <p><strong>Hold Left grip</strong> and the sticks retune the setup directly. Nothing reaches the game while you hold it.</p>
@@ -245,7 +262,9 @@ rom = mygame.zip</code></pre>
 <p><strong>My shots land near, but not on, the target</strong> — adjust GUN PITCH and GUN YAW in the menu.</p>
 <p><strong>Shots land in the centre no matter where I aim</strong> — the core is not receiving the gun's position. Check you are using a supported core.</p>
 <p><strong>The ROM list is empty</strong> — files must be inside <code>roms/</code>. A disc game must be in its own folder with its <code>.gdi</code> or <code>.cue</code> beside its track files.</p>
-<p><strong>The app opened straight into the menu saying the last launch crashed</strong> — that is deliberate. The previous game brought the app down, so it started without loading anything. Pick something else.</p>
+<p><strong>The app opened straight into the menu saying the last launch crashed</strong> — that is deliberate. The previous game brought the app down, so it started without loading anything. Pick something else, or use <strong>UNLOAD ALL</strong> to clear the message.</p>
+<p><strong>A message names a game I have removed</strong> — <code>autoload.txt</code> still points at it. QuestGun now ignores an autoload entry whose file is missing and starts empty instead, so this clears itself; <strong>UNLOAD ALL</strong> removes the message immediately. Edit or delete <code>autoload.txt</code> to stop it being looked for at all.</p>
+<p><strong>A message is stuck on the screen</strong> — <strong>UNLOAD ALL</strong> in the menu clears any message, along with whatever core and game are loaded. It deletes nothing from your headset.</p>
 <hr>
 <h2 id="6-what-this-app-does-not-do">6. What this app does not do</h2>
 <ul>

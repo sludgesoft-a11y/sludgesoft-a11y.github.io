@@ -134,18 +134,35 @@ behind the panel.
 | RESUME | Close the menu |
 | LOAD ROM | Browse and load a game |
 | LOAD CORE | Switch emulator core, keeping the current game |
+| DEMO RANGE | The built-in shooting gallery — see [Trying it without a game](#trying-it-without-a-game) |
 | RECENTRE SCREEN | Put the screen where you are looking |
 | SCREEN DISTANCE | How far away the screen sits (1–12 m) |
 | SCREEN WIDTH | How large the screen is (1–16 m) |
 | SCREEN YAW TRIM | Slide the screen left or right around you |
+| GUN SETUP | Opens the gun page below |
+| RESET GAME | Restart the current game |
+| UNLOAD ALL | Drop the core and the game, and clear any message on the screen |
+| EXIT QUESTGUN | Quit |
+
+### The gun page
+
+Everything about the gun lives behind **GUN SETUP**, so the main list stays
+short. **< BACK** returns.
+
+| Menu item | What it does |
+|---|---|
 | GUN PITCH / GUN YAW | Aim calibration |
 | GUN HAND | Left or right handed |
 | SHOW GUN | Draw the gun model in your hand |
 | LASER SIGHT | Show the red aiming dot |
 | EMULATOR CROSSHAIR | Show the core's own crosshair as well as the laser dot |
-| DEMO RANGE | The built-in shooting gallery — see [Trying it without a game](#trying-it-without-a-game) |
-| RESET GAME | Restart the current game |
-| EXIT QUESTGUN | Quit |
+
+### If something is stuck
+
+**UNLOAD ALL** is the way out of a bad state. It drops whatever core and game
+are loaded, clears the message on the screen, and leaves you at the idle panel
+with the menu open. Nothing on your headset is deleted — your cores and games
+stay exactly where they are.
 
 Settings are not saved between launches yet.
 
@@ -159,11 +176,14 @@ bottles on a back rail, cans on a front one.
 | Trigger | Shoot |
 | Grip | Stand everything back up |
 
-It is drawn by QuestGun itself — no core, no game files, nothing to install — so
-it works on a fresh install, and it is the quickest way to check that your aim
-is calibrated. If the laser dot sits on a bottle and the shot misses, your
-**GUN PITCH** and **GUN YAW** need trimming; a hit means the aiming line and the
-dot agree.
+Bottles break and cans ring when you hit them, and the debris falls. Shoot
+everything and the range says so; the grip stands it all back up.
+
+It is drawn and voiced by QuestGun itself — no core, no game files, nothing to
+install — so it works on a fresh install, and it is the quickest way to check
+that your aim is calibrated. If the laser dot sits on a bottle and the shot
+misses, your **GUN PITCH** and **GUN YAW** need trimming (they are under
+**GUN SETUP**); a hit means the aiming line and the dot agree.
 
 The range only runs while no game is loaded. With a core running, the trigger
 and grip belong to the game as usual.
@@ -274,7 +294,17 @@ its own folder with its `.gdi` or `.cue` beside its track files.
 
 **The app opened straight into the menu saying the last launch crashed** — that
 is deliberate. The previous game brought the app down, so it started without
-loading anything. Pick something else.
+loading anything. Pick something else, or use **UNLOAD ALL** to clear the
+message.
+
+**A message names a game I have removed** — `autoload.txt` still points at it.
+QuestGun now ignores an autoload entry whose file is missing and starts empty
+instead, so this clears itself; **UNLOAD ALL** removes the message immediately.
+Edit or delete `autoload.txt` to stop it being looked for at all.
+
+**A message is stuck on the screen** — **UNLOAD ALL** in the menu clears any
+message, along with whatever core and game are loaded. It deletes nothing from
+your headset.
 
 ---
 
