@@ -11,9 +11,10 @@
 
 **QuestGun does not collect, store, transmit or share any personal data.**
 
-The application has no network capability. It requests no Android permissions
-of any kind, and contains no analytics, advertising, crash-reporting or
-telemetry components. Nothing you do in QuestGun leaves your headset.
+The application has no network capability. It requests no permission that grants
+access to your data, your device or the outside world, and contains no analytics,
+advertising, crash-reporting or telemetry components. Nothing you do in QuestGun
+leaves your headset.
 
 The remainder of this policy explains that in the detail the Meta Horizon Store
 requires.
@@ -45,11 +46,17 @@ about yourself.
 
 This is verifiable rather than a promise, which is why we state it plainly:
 
-- **No network permission.** QuestGun's Android manifest declares no
-  permissions at all — including no `INTERNET` permission. Android therefore
-  prevents the application from opening any network connection. It is not that
-  we choose not to send data; the application is technically incapable of
-  sending it.
+- **No network permission.** QuestGun declares no `INTERNET` permission, so
+  Android prevents the application from opening any network connection at all.
+  It is not that we choose not to send data; the application is technically
+  incapable of sending it.
+- **The only permissions present.** The installed package declares exactly two:
+  `org.khronos.openxr.permission.OPENXR` and
+  `org.khronos.openxr.permission.OPENXR_SYSTEM`. Both are required by the
+  standard Khronos OpenXR loader to talk to the headset's VR runtime, both are
+  contributed by that library rather than written by us, and neither grants
+  access to storage, the camera, the microphone, the network, your location or
+  your account. There are no others.
 - **No third-party SDKs.** QuestGun's only external dependency is the Khronos
   OpenXR loader, which is the standard library used to talk to the headset's VR
   runtime. There is no analytics library, no advertising library, no crash

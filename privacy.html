@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Privacy Policy — QuestGun</title>
-<meta name="description" content="QuestGun collects no personal data. It has no network permission, no analytics and no third-party SDKs. Full privacy policy for the Meta Horizon Store listing.">
+<meta name="description" content="QuestGun collects no personal data. It has no internet permission, no analytics and no third-party SDKs. Full privacy policy for the Meta Horizon Store listing.">
 <meta property="og:title" content="Privacy Policy — QuestGun">
-<meta property="og:description" content="QuestGun collects no personal data. It has no network permission, no analytics and no third-party SDKs. Full privacy policy for the Meta Horizon Store listing.">
+<meta property="og:description" content="QuestGun collects no personal data. It has no internet permission, no analytics and no third-party SDKs. Full privacy policy for the Meta Horizon Store listing.">
 <meta property="og:type" content="article">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 108 108'%3E%3Crect width='108' height='108' fill='%2305080d'/%3E%3Cg fill='none' stroke='%232ec4ba' stroke-width='6'%3E%3Cpath d='M54 33a21 21 0 0 1 14.85 6.15'/%3E%3Cpath d='M75 54a21 21 0 0 1-6.15 14.85'/%3E%3Cpath d='M54 75a21 21 0 0 1-14.85-6.15'/%3E%3Cpath d='M33 54a21 21 0 0 1 6.15-14.85'/%3E%3C/g%3E%3Ccircle cx='54' cy='54' r='4.5' fill='%23ff3626'/%3E%3C/svg%3E">
 <link rel="stylesheet" href="style.css">
@@ -49,7 +49,7 @@
 <hr>
 <h2 id="summary">Summary</h2>
 <p><strong>QuestGun does not collect, store, transmit or share any personal data.</strong></p>
-<p>The application has no network capability. It requests no Android permissions of any kind, and contains no analytics, advertising, crash-reporting or telemetry components. Nothing you do in QuestGun leaves your headset.</p>
+<p>The application has no network capability. It requests no permission that grants access to your data, your device or the outside world, and contains no analytics, advertising, crash-reporting or telemetry components. Nothing you do in QuestGun leaves your headset.</p>
 <p>The remainder of this policy explains that in the detail the Meta Horizon Store requires.</p>
 <hr>
 <h2 id="1-who-we-are">1. Who we are</h2>
@@ -62,7 +62,8 @@
 <h2 id="3-why-there-is-nothing-to-collect">3. Why there is nothing to collect</h2>
 <p>This is verifiable rather than a promise, which is why we state it plainly:</p>
 <ul>
-  <li><strong>No network permission.</strong> QuestGun's Android manifest declares no permissions at all — including no <code>INTERNET</code> permission. Android therefore prevents the application from opening any network connection. It is not that we choose not to send data; the application is technically incapable of sending it.</li>
+  <li><strong>No network permission.</strong> QuestGun declares no <code>INTERNET</code> permission, so Android prevents the application from opening any network connection at all. It is not that we choose not to send data; the application is technically incapable of sending it.</li>
+  <li><strong>The only permissions present.</strong> The installed package declares exactly two: <code>org.khronos.openxr.permission.OPENXR</code> and <code>org.khronos.openxr.permission.OPENXR_SYSTEM</code>. Both are required by the standard Khronos OpenXR loader to talk to the headset's VR runtime, both are contributed by that library rather than written by us, and neither grants access to storage, the camera, the microphone, the network, your location or your account. There are no others.</li>
   <li><strong>No third-party SDKs.</strong> QuestGun's only external dependency is the Khronos OpenXR loader, which is the standard library used to talk to the headset's VR runtime. There is no analytics library, no advertising library, no crash reporting service and no social integration.</li>
   <li><strong>No storage permission.</strong> QuestGun reads and writes only inside its own application-specific directory, which Android grants to every app without a permission request. It cannot read your photos, documents, downloads, or any other application's data.</li>
 </ul>
