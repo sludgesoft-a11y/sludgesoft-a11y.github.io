@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What runs on QuestGun — compatibility</title>
+<meta name="description" content="Measured and inferred compatibility for QuestGun on Meta Quest 3 and 3S, by arcade board: which hardware runs, which is too slow, and why Dreamcast and NAOMI do not work.">
+<meta property="og:title" content="What runs on QuestGun — compatibility">
+<meta property="og:description" content="Measured and inferred compatibility for QuestGun on Meta Quest 3 and 3S, by arcade board: which hardware runs, which is too slow, and why Dreamcast and NAOMI do not work.">
+<meta property="og:type" content="article">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 108 108'%3E%3Crect width='108' height='108' fill='%2305080d'/%3E%3Cg fill='none' stroke='%232ec4ba' stroke-width='6'%3E%3Cpath d='M54 33a21 21 0 0 1 14.85 6.15'/%3E%3Cpath d='M75 54a21 21 0 0 1-6.15 14.85'/%3E%3Cpath d='M54 75a21 21 0 0 1-14.85-6.15'/%3E%3Cpath d='M33 54a21 21 0 0 1 6.15-14.85'/%3E%3C/g%3E%3Ccircle cx='54' cy='54' r='4.5' fill='%23ff3626'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<header>
+  <div class="wrap bar">
+    <svg class="mark" viewBox="0 0 108 108" aria-hidden="true">
+      <g fill="none" stroke="#2ec4ba" stroke-width="6">
+        <path d="M54 33a21 21 0 0 1 14.85 6.15"/>
+        <path d="M75 54a21 21 0 0 1-6.15 14.85"/>
+        <path d="M54 75a21 21 0 0 1-14.85-6.15"/>
+        <path d="M33 54a21 21 0 0 1 6.15-14.85"/>
+      </g>
+      <g stroke="#1a6868" stroke-width="3">
+        <path d="M54 27.5v9M54 71.5v9M27.5 54h9M71.5 54h9"/>
+      </g>
+      <circle cx="54" cy="54" r="4.5" fill="#ff3626"/>
+      <circle cx="54" cy="54" r="1.8" fill="#ffe2d6"/>
+    </svg>
+    <div class="wordmark"><a href="index.html">Sludge<span>Soft</span></a></div>
+    <nav>
+      <a href="questgun.html">QuestGun</a>
+      <a href="guide.html">Guide</a>
+      <a href="compatibility.html" aria-current="page">What runs</a>
+      <a href="support.html">Support</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main" class="wrap doc">
+<h1 id="what-runs-and-what-does-not">What runs, and what does not</h1>
+<p class="meta"><strong>Application:</strong> QuestGun (<code>com.questgun.arcade</code>)<br>
+<strong>Last updated:</strong> 23 August 2026</p>
+<p>Every claim on this page is marked with how strongly it is known: <strong>measured</strong> on a Quest 3S, <strong>inferred</strong> from measurements of comparable hardware, or <strong>untested</strong>. Nothing is listed as working until it has actually been run.</p>
+<p>Results are given by <strong>arcade board</strong>, not by title. What decides whether something is playable is the hardware it was written for and the core emulating it, so the board is the useful unit — and QuestGun neither supplies nor endorses any particular game.</p>
+<hr>
+<h2 id="what-questgun-contains">What QuestGun contains</h2>
+<ul>
+  <li><strong>No games.</strong> No ROMs, no disc images, no game data of any kind.</li>
+  <li><strong>No BIOS files.</strong></li>
+  <li><strong>No emulator cores.</strong> Cores are loaded at runtime from files you provide; none are bundled in the package.</li>
+  <li><strong>No downloader.</strong> The app never fetches content from anywhere, and holds no network permission with which to try.</li>
+</ul>
+<p>A fresh install cannot run anything until you supply an emulator core and game files of your own. Cores are third-party software under their own licences — mame2003-plus, MAME and Flycast are GPL. You are responsible for having the right to use the files you supply.</p>
+<hr>
+<h2 id="the-four-ways-a-game-can-fail">The four ways a game can fail</h2>
+<p>These feel identical while wearing the headset and have completely different causes, so it is worth knowing them apart.</p>
+<div class="tablewrap">
+<table>
+<thead><tr>
+<th>Outcome</th>
+<th>Cause</th>
+<th>Fixable?</th>
+</tr></thead>
+<tbody>
+<tr><td><strong>Will not load</strong></td><td>The core has no driver for that hardware, or the files are for a different version of MAME</td><td>Yes — different core, or matching files</td></tr>
+<tr><td><strong>Loads, unplayably slow</strong></td><td>The arcade hardware is too demanding for a mobile chip</td><td><strong>No</strong></td></tr>
+<tr><td><strong>Loads, then closes the app</strong></td><td>A bug inside the emulator core on this hardware</td><td>Not from QuestGun</td></tr>
+<tr><td><strong>Works</strong></td><td></td><td></td></tr>
+</tbody>
+</table>
+</div>
+<hr>
+<h2 id="confirmed-working">Confirmed working</h2>
+<div class="tablewrap">
+<table>
+<thead><tr>
+<th>Board</th>
+<th>Core</th>
+<th>Evidence</th>
+</tr></thead>
+<tbody>
+<tr><td><strong>Namco System 22</strong></td><td>current MAME</td><td><strong>Measured.</strong> A System 22 lightgun title at 640x480, 60 fps emulated, 72 fps held in the headset, with aiming, trigger, pedal, coin and start all reaching the game</td></tr>
+</tbody>
+</table>
+</div>
+<p>The lightgun path is therefore proven end to end on real hardware.</p>
+<p>This list is short because it is honest, not because the app is limited to one board. The hardware below is less demanding still — it simply has not been run yet, so it is not claimed.</p>
+<hr>
+<h2 id="expected-to-work-not-yet-run">Expected to work — not yet run</h2>
+<p><strong>Inferred, not measured.</strong> Two-dimensional and early-3D arcade lightgun boards from the late 1980s and 1990s — Taito, Konami, Midway, SNK and Namco hardware of that era — have drivers in the supported cores and are far less demanding than the System 22 board already measured holding full speed. Around fifteen lightgun titles across those boards fall into this group.</p>
+<p>The 3D boards among them are the most likely to struggle. If you run something on one of them, <a href="support.html">tell us how it went</a> and the result goes on this page.</p>
+<hr>
+<h2 id="will-load-but-is-too-slow-to-play">Will load, but is too slow to play</h2>
+<p><strong>This is a limit of the headset's processor. No update to QuestGun changes it.</strong></p>
+<div class="tablewrap">
+<table>
+<thead><tr>
+<th>Board</th>
+<th>Status</th>
+</tr></thead>
+<tbody>
+<tr><td><strong>Namco System 23</strong></td><td><strong>Measured: 4 fps.</strong> One emulated frame takes 100 ms against a 13.9 ms budget — roughly 7x too slow</td></tr>
+<tr><td><strong>Namco System 246</strong> (PlayStation 2 based)</td><td><strong>Inferred.</strong> Requires PS2 emulation; no viable ARM implementation</td></tr>
+<tr><td><strong>Sega Model 2</strong></td><td><strong>Inferred.</strong> Drivers exist in current MAME but the board is slower to emulate than System 23</td></tr>
+<tr><td><strong>Sega NAOMI</strong> under MAME</td><td><strong>Inferred</strong> — see Flycast below for the other route</td></tr>
+<tr><td><strong>Namco System 12</strong></td><td><strong>Inferred.</strong> Lighter than the above but still demanding</td></tr>
+</tbody>
+</table>
+</div>
+<p>For the record, QuestGun's own cost is about <strong>0.6 ms per frame</strong> — under 5% of the frame budget. When something runs slowly, essentially all of that time is the emulator core, not the cabinet around it.</p>
+<hr>
+<h2 id="dreamcast-and-naomi-do-not-currently-work">Dreamcast and NAOMI do not currently work</h2>
+<p><strong>Measured, repeatedly.</strong> Flycast loads this content completely — BIOS, data, graphics, audio, correct hardware ID — and then the app closes as soon as emulation begins.</p>
+<pre><code>[VMEM] Virtual memory file allocation failed: errno 13
+[VMEM] Warning! nvmem is DISABLED</code></pre>
+<p>Flycast cannot allocate the memory arena it needs, because Android blocks the mechanism it uses for apps targeting API 29 or higher. Its recompiler then reads from unmapped memory and the process dies. Confirmed across <strong>two different Flycast builds</strong> and <strong>both</strong> the arcade NAOMI and the Dreamcast disc routes.</p>
+<p>This is a fault in the core on this platform, not a QuestGun bug and not a setup error on your part. It may be fixed by a future Flycast release. Until then, use MAME. If Flycast content does crash the app, the next launch skips it automatically and opens the menu instead of crashing again.</p>
+<hr>
+<h2 id="playstation-untested">PlayStation — untested</h2>
+<p>PCSX-ReARMed and SwanStation are supported and pre-configured for GunCon, and PCSX-ReARMed needs no BIOS file. <strong>Nothing has been run on either</strong>, so no claim is made about PlayStation support yet.</p>
+<hr>
+<h2 id="cores">Cores</h2>
+<p>Cores are not bundled. Download the Android <strong>arm64-v8a</strong> build of the core you want and copy it into the app's <code>cores/</code> folder.</p>
+<div class="tablewrap">
+<table>
+<thead><tr>
+<th>Core</th>
+<th>Runs</th>
+<th>Status</th>
+</tr></thead>
+<tbody>
+<tr><td><strong>mamearcade</strong> (current MAME)</td><td>Arcade</td><td><strong>Recommended.</strong> Widest hardware coverage. ~250 MB</td></tr>
+<tr><td><strong>mame2003-plus</strong></td><td>Arcade</td><td>Fast and light. Best for older boards</td></tr>
+<tr><td>mame2010</td><td>Arcade</td><td>Middle ground</td></tr>
+<tr><td>pcsx_rearmed</td><td>PlayStation</td><td>Installed and configured, not yet proven</td></tr>
+<tr><td>swanstation</td><td>PlayStation</td><td>Installed and configured, not yet proven</td></tr>
+<tr><td>Flycast</td><td>Dreamcast / NAOMI</td><td><strong>Does not work on Quest</strong> — see above</td></tr>
+</tbody>
+</table>
+</div>
+<p><strong>Match your files to your core.</strong> MAME data is tied to the MAME version a core was built from, and a mismatch is rejected. This is the single most common cause of "it will not load". Short names can differ between MAME versions too, so a file that is correct for one core may be both the wrong contents <em>and</em> the wrong name for another.</p>
+<hr>
+<h2 id="known-gaps-in-the-app-itself">Known gaps in the app itself</h2>
+<ul>
+  <li><strong>Settings are not saved between launches.</strong> Screen placement and gun calibration reset every time.</li>
+  <li><strong>No guided first-run setup.</strong> A new install shows an empty menu; you are expected to have read the <a href="guide.html">guide</a>.</li>
+  <li><strong>One player only.</strong> No two-gun support.</li>
+  <li><strong>No save states.</strong></li>
+  <li>A slow core drags the whole interface down with it, because emulation runs on the display thread.</li>
+</ul>
+<p class="backlink"><a href="index.html">&larr; sludgesoft.github.io</a></p>
+</main>
+
+<footer>
+  <div class="wrap footrow">
+    <span>&copy; <span id="yr">2026</span> SludgeSoft</span>
+    <span class="sep"></span>
+    <a href="support.html">Support</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="terms.html">Terms</a>
+    <a href="https://github.com/sludgesoft-a11y">GitHub</a>
+  </div>
+</footer>
+
+<script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+</body>
+</html>

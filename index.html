@@ -9,124 +9,11 @@
 <meta property="og:description" content="Small, stubborn software for VR. Maker of QuestGun.">
 <meta property="og:type" content="website">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 108 108'%3E%3Crect width='108' height='108' fill='%2305080d'/%3E%3Cg fill='none' stroke='%232ec4ba' stroke-width='6'%3E%3Cpath d='M54 33a21 21 0 0 1 14.85 6.15'/%3E%3Cpath d='M75 54a21 21 0 0 1-6.15 14.85'/%3E%3Cpath d='M54 75a21 21 0 0 1-14.85-6.15'/%3E%3Cpath d='M33 54a21 21 0 0 1 6.15-14.85'/%3E%3C/g%3E%3Ccircle cx='54' cy='54' r='4.5' fill='%23ff3626'/%3E%3C/svg%3E">
-<style>
-  :root{
-    --deep:#05080d;
-    --panel:#0a1119;
-    --line:#1b2f3d;
-    --teal:#2ec4ba;
-    --teal-bright:#68ecdc;
-    --teal-dim:#1a6868;
-    --laser:#ff3626;
-    --ink:#dfe9ee;
-    --ink-dim:#8ba3b0;
-    --mono:ui-monospace,"SF Mono",SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;
-  }
-  *{box-sizing:border-box}
-  html{-webkit-text-size-adjust:100%}
-  body{
-    margin:0;
-    background:var(--deep);
-    color:var(--ink);
-    font:16px/1.65 var(--mono);
-    letter-spacing:.01em;
-    background-image:
-      radial-gradient(900px 500px at 78% -12%, rgba(46,196,186,.14), transparent 62%),
-      radial-gradient(700px 420px at 8% 105%, rgba(255,54,38,.07), transparent 60%);
-    background-attachment:fixed;
-  }
-  a{color:var(--teal-bright);text-decoration:none;border-bottom:1px solid rgba(104,236,220,.28)}
-  a:hover{border-bottom-color:var(--teal-bright)}
-  .wrap{max-width:860px;margin:0 auto;padding:0 24px}
-
-  /* faint scanline texture, in keeping with the arcade subject */
-  body::before{
-    content:"";position:fixed;inset:0;pointer-events:none;z-index:2;
-    background:repeating-linear-gradient(180deg,rgba(255,255,255,.018) 0 1px,transparent 1px 3px);
-  }
-
-  header{padding:28px 0 0}
-  .bar{display:flex;align-items:center;gap:14px}
-  .mark{width:38px;height:38px;flex:0 0 auto}
-  .wordmark{font-size:19px;font-weight:700;letter-spacing:.16em;text-transform:uppercase}
-  .wordmark span{color:var(--teal)}
-  .bar nav{margin-left:auto;display:flex;gap:20px;font-size:13px;letter-spacing:.08em;text-transform:uppercase}
-  .bar nav a{color:var(--ink-dim);border:0}
-  .bar nav a:hover{color:var(--teal-bright)}
-
-  .hero{padding:78px 0 64px}
-  .kicker{
-    font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--teal);
-    display:flex;align-items:center;gap:12px;margin-bottom:26px;
-  }
-  .kicker::after{content:"";height:1px;flex:1;background:linear-gradient(90deg,var(--teal-dim),transparent)}
-  h1{
-    font-size:clamp(38px,8vw,68px);line-height:1.02;margin:0 0 22px;
-    letter-spacing:-.02em;font-weight:700;
-  }
-  h1 em{font-style:normal;color:var(--teal)}
-  .lede{font-size:clamp(16px,2.4vw,19px);color:var(--ink-dim);max-width:60ch;margin:0}
-  .lede strong{color:var(--ink);font-weight:600}
-
-  section{padding:52px 0;border-top:1px solid var(--line)}
-  h2{
-    font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--teal);
-    margin:0 0 28px;font-weight:600;
-  }
-
-  .card{
-    background:linear-gradient(180deg,rgba(16,34,48,.55),rgba(10,17,25,.55));
-    border:1px solid var(--line);border-radius:4px;padding:32px;position:relative;overflow:hidden;
-  }
-  .card::before{content:"";position:absolute;top:0;bottom:0;left:0;width:2px;background:linear-gradient(180deg,var(--teal),transparent)}
-  .card h3{margin:0 0 6px;font-size:26px;letter-spacing:-.01em}
-  .card .sub{color:var(--ink-dim);font-size:14px;margin:0 0 22px;letter-spacing:.04em}
-  .card p{margin:0 0 16px;color:#c3d3db}
-
-  .tags{display:flex;flex-wrap:wrap;gap:8px;margin:22px 0 24px;padding:0;list-style:none}
-  .tags li{
-    font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-dim);
-    border:1px solid var(--line);border-radius:2px;padding:4px 9px;
-  }
-
-  .status{display:flex;align-items:center;gap:9px;font-size:13px;color:var(--ink-dim);margin:0 0 22px}
-  .dot{width:7px;height:7px;border-radius:50%;background:var(--laser);box-shadow:0 0 0 3px rgba(255,54,38,.16)}
-
-  .links{display:flex;flex-wrap:wrap;gap:10px}
-  .btn{
-    display:inline-block;font-size:12px;letter-spacing:.14em;text-transform:uppercase;
-    padding:10px 18px;border:1px solid var(--teal-dim);border-radius:2px;
-    color:var(--teal-bright);background:transparent;transition:background .15s,border-color .15s;
-  }
-  .btn:hover{background:rgba(46,196,186,.1);border-color:var(--teal)}
-  .btn.primary{background:var(--teal);color:var(--deep);border-color:var(--teal);font-weight:700}
-  .btn.primary:hover{background:var(--teal-bright);border-color:var(--teal-bright)}
-
-  .facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:4px;overflow:hidden}
-  .fact{background:var(--panel);padding:22px}
-  .fact dt{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-dim);margin:0 0 8px}
-  .fact dd{margin:0;font-size:15px;color:var(--ink)}
-
-  .prose p{color:#c3d3db;max-width:64ch}
-  .prose p:first-of-type{margin-top:0}
-
-  footer{border-top:1px solid var(--line);padding:34px 0 60px;color:var(--ink-dim);font-size:13px}
-  .footrow{display:flex;flex-wrap:wrap;gap:18px;align-items:center}
-  .footrow .sep{margin-left:auto}
-
-  @media (max-width:620px){
-    .hero{padding:56px 0 44px}
-    .card{padding:24px}
-    .bar nav{display:none}
-    .footrow .sep{margin-left:0;width:100%}
-  }
-  @media (prefers-reduced-motion:no-preference){
-    .dot{animation:pulse 2.6s ease-in-out infinite}
-    @keyframes pulse{0%,100%{opacity:1}50%{opacity:.42}}
-  }
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+<a class="skip" href="#main">Skip to content</a>
 
 <header>
   <div class="wrap bar">
@@ -143,16 +30,17 @@
       <circle cx="54" cy="54" r="4.5" fill="#ff3626"/>
       <circle cx="54" cy="54" r="1.8" fill="#ffe2d6"/>
     </svg>
-    <div class="wordmark">Sludge<span>Soft</span></div>
+    <div class="wordmark"><a href="index.html">Sludge<span>Soft</span></a></div>
     <nav>
-      <a href="#work">Work</a>
-      <a href="#studio">Studio</a>
-      <a href="#contact">Contact</a>
+      <a href="questgun.html">QuestGun</a>
+      <a href="guide.html">Guide</a>
+      <a href="compatibility.html">What runs</a>
+      <a href="support.html">Support</a>
     </nav>
   </div>
 </header>
 
-<main>
+<main id="main">
   <div class="wrap hero">
     <div class="kicker">Independent software</div>
     <h1>Small, stubborn<br>software for <em>VR</em>.</h1>
@@ -177,9 +65,10 @@
         not your eye &mdash; so leaning, and holding the gun out to one side, move
         your point of impact exactly as they did on the real cabinet.</p>
 
-        <p>It is a frontend, not an emulator. Cores and game files are supplied by
-        the player; nothing is bundled. Even the gun in your hands is a procedural
-        model, so the app ships with no art assets at all.</p>
+        <p>It is a frontend, not an emulator. <strong>No games, no BIOS files and
+        no emulator cores are included</strong> &mdash; cores and game files are
+        supplied by the player. Even the gun in your hands is a procedural model,
+        so the app ships with no art assets at all.</p>
 
         <ul class="tags">
           <li>OpenXR</li>
@@ -191,9 +80,9 @@
         </ul>
 
         <div class="links">
-          <a class="btn primary" href="https://github.com/sludgesoft-a11y/QuestGun">Source on GitHub</a>
-          <a class="btn" href="https://github.com/sludgesoft-a11y/QuestGun/blob/main/USER_GUIDE.md">User guide</a>
-          <a class="btn" href="https://github.com/sludgesoft-a11y/QuestGun/blob/main/LIMITATIONS.md">What runs</a>
+          <a class="btn primary" href="questgun.html">About QuestGun</a>
+          <a class="btn" href="guide.html">Player's guide</a>
+          <a class="btn" href="compatibility.html">What runs</a>
         </div>
       </article>
     </div>
@@ -227,10 +116,10 @@
   <section id="contact">
     <div class="wrap prose">
       <h2>Contact</h2>
-      <p>Bug reports, compatibility notes and questions are best filed as
-      <a href="https://github.com/sludgesoft-a11y/QuestGun/issues">GitHub issues</a>.
-      Everything else lives at
-      <a href="https://github.com/sludgesoft-a11y">github.com/sludgesoft-a11y</a>.</p>
+      <p>Bug reports, compatibility notes and questions:
+      <a href="mailto:sludgesoft@gmail.com">sludgesoft@gmail.com</a>. There is more
+      detail, including what to put in a bug report, on the
+      <a href="support.html">support page</a>.</p>
     </div>
   </section>
 </main>
@@ -239,6 +128,9 @@
   <div class="wrap footrow">
     <span>&copy; <span id="yr">2026</span> SludgeSoft</span>
     <span class="sep"></span>
+    <a href="support.html">Support</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="terms.html">Terms</a>
     <a href="https://github.com/sludgesoft-a11y">GitHub</a>
   </div>
 </footer>

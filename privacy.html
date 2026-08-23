@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy — QuestGun</title>
+<meta name="description" content="QuestGun collects no personal data. It has no network permission, no analytics and no third-party SDKs. Full privacy policy for the Meta Horizon Store listing.">
+<meta property="og:title" content="Privacy Policy — QuestGun">
+<meta property="og:description" content="QuestGun collects no personal data. It has no network permission, no analytics and no third-party SDKs. Full privacy policy for the Meta Horizon Store listing.">
+<meta property="og:type" content="article">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 108 108'%3E%3Crect width='108' height='108' fill='%2305080d'/%3E%3Cg fill='none' stroke='%232ec4ba' stroke-width='6'%3E%3Cpath d='M54 33a21 21 0 0 1 14.85 6.15'/%3E%3Cpath d='M75 54a21 21 0 0 1-6.15 14.85'/%3E%3Cpath d='M54 75a21 21 0 0 1-14.85-6.15'/%3E%3Cpath d='M33 54a21 21 0 0 1 6.15-14.85'/%3E%3C/g%3E%3Ccircle cx='54' cy='54' r='4.5' fill='%23ff3626'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<header>
+  <div class="wrap bar">
+    <svg class="mark" viewBox="0 0 108 108" aria-hidden="true">
+      <g fill="none" stroke="#2ec4ba" stroke-width="6">
+        <path d="M54 33a21 21 0 0 1 14.85 6.15"/>
+        <path d="M75 54a21 21 0 0 1-6.15 14.85"/>
+        <path d="M54 75a21 21 0 0 1-14.85-6.15"/>
+        <path d="M33 54a21 21 0 0 1 6.15-14.85"/>
+      </g>
+      <g stroke="#1a6868" stroke-width="3">
+        <path d="M54 27.5v9M54 71.5v9M27.5 54h9M71.5 54h9"/>
+      </g>
+      <circle cx="54" cy="54" r="4.5" fill="#ff3626"/>
+      <circle cx="54" cy="54" r="1.8" fill="#ffe2d6"/>
+    </svg>
+    <div class="wordmark"><a href="index.html">Sludge<span>Soft</span></a></div>
+    <nav>
+      <a href="questgun.html">QuestGun</a>
+      <a href="guide.html">Guide</a>
+      <a href="compatibility.html">What runs</a>
+      <a href="support.html">Support</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main" class="wrap doc">
+<h1 id="privacy-policy">Privacy Policy</h1>
+<p class="meta"><strong>Application:</strong> QuestGun (<code>com.questgun.arcade</code>)<br>
+<strong>Publisher:</strong> SludgeSoft<br>
+<strong>Effective date:</strong> 18 August 2026<br>
+<strong>Last updated:</strong> 18 August 2026</p>
+<hr>
+<h2 id="summary">Summary</h2>
+<p><strong>QuestGun does not collect, store, transmit or share any personal data.</strong></p>
+<p>The application has no network capability. It requests no Android permissions of any kind, and contains no analytics, advertising, crash-reporting or telemetry components. Nothing you do in QuestGun leaves your headset.</p>
+<p>The remainder of this policy explains that in the detail the Meta Horizon Store requires.</p>
+<hr>
+<h2 id="1-who-we-are">1. Who we are</h2>
+<p>QuestGun is published by SludgeSoft, an independent sole-trader software developer. Contact details are in section 11.</p>
+<p>For the purposes of UK GDPR and the EU General Data Protection Regulation, SludgeSoft would be the data controller for any personal data processed through QuestGun. As set out below, we do not process any.</p>
+<h2 id="2-what-data-we-collect">2. What data we collect</h2>
+<p><strong>None.</strong></p>
+<p>We collect no personal data, no device identifiers, no usage analytics, no crash reports, no advertising identifiers, no location data, no voice or audio recordings, no camera imagery, no hand or body tracking data, no eye tracking data, and no account information.</p>
+<p>We do not ask you to create an account, sign in, or provide any information about yourself.</p>
+<h2 id="3-why-there-is-nothing-to-collect">3. Why there is nothing to collect</h2>
+<p>This is verifiable rather than a promise, which is why we state it plainly:</p>
+<ul>
+  <li><strong>No network permission.</strong> QuestGun's Android manifest declares no permissions at all — including no <code>INTERNET</code> permission. Android therefore prevents the application from opening any network connection. It is not that we choose not to send data; the application is technically incapable of sending it.</li>
+  <li><strong>No third-party SDKs.</strong> QuestGun's only external dependency is the Khronos OpenXR loader, which is the standard library used to talk to the headset's VR runtime. There is no analytics library, no advertising library, no crash reporting service and no social integration.</li>
+  <li><strong>No storage permission.</strong> QuestGun reads and writes only inside its own application-specific directory, which Android grants to every app without a permission request. It cannot read your photos, documents, downloads, or any other application's data.</li>
+</ul>
+<h2 id="4-data-stored-on-your-device">4. Data stored on your device</h2>
+<p>QuestGun reads files that <strong>you</strong> place into its own application directory:</p>
+<pre><code>/sdcard/Android/data/com.questgun.arcade/files/</code></pre>
+<p>This includes emulator core files, game data, and an optional <code>autoload.txt</code> configuration file. These files are supplied entirely by you, remain on your device, and are never read for any purpose other than running the software you have asked QuestGun to run. They are never transmitted anywhere.</p>
+<p>Uninstalling QuestGun removes this directory and everything in it, in the normal Android manner.</p>
+<h2 id="5-headset-sensor-data">5. Headset sensor data</h2>
+<p>To function as a virtual reality application, QuestGun receives head and controller position data from the headset's OpenXR runtime while it is running. This is used solely and immediately to draw the correct image for your eyes and to calculate where your controller is aiming.</p>
+<p>This data is held in memory for the duration of a single frame, is never recorded, never written to storage, and never transmitted. QuestGun does not use hand tracking, eye tracking, face tracking, body tracking, passthrough camera imagery, or the microphone.</p>
+<h2 id="6-third-party-emulator-cores">6. Third-party emulator cores</h2>
+<p>QuestGun is a frontend, not an emulator. It loads emulator "cores" that <strong>you</strong> download and install yourself, from sources of your choosing such as the libretro project.</p>
+<p>These cores are independent third-party software, not written, distributed or controlled by SludgeSoft. This privacy policy does not cover them. Their behaviour is governed by their own authors and licences. Because QuestGun holds no network permission, a core running inside QuestGun is also unable to reach the network — but you should still satisfy yourself as to the provenance of any software you install.</p>
+<h2 id="7-data-sharing-and-selling">7. Data sharing and selling</h2>
+<p>We do not share, sell, rent, disclose or transfer personal data to anyone, because we do not have any. There are no third-party recipients, no data processors, and no international data transfers.</p>
+<h2 id="8-childrens-privacy">8. Children's privacy</h2>
+<p>The Meta Horizon Store requires users to meet Meta's own minimum age requirements, and virtual reality headsets carry their own manufacturer age guidance which you should follow.</p>
+<p>QuestGun collects no data from anyone, of any age. We therefore do not knowingly collect personal information from children, and could not do so if we wished to.</p>
+<h2 id="9-your-rights">9. Your rights</h2>
+<p>Under UK GDPR, EU GDPR, the California Consumer Privacy Act and comparable legislation, you have rights to access, correct, delete, port and restrict the processing of your personal data, and to object to it.</p>
+<p>We hold no personal data about you, so there is nothing for us to retrieve, amend or erase. You are welcome to contact us to confirm this, and we will respond to any such request.</p>
+<h2 id="10-changes-to-this-policy">10. Changes to this policy</h2>
+<p>If QuestGun's data practices ever change — for example if an optional online feature were added in a future version — this policy will be updated before that version is released, and the "last updated" date above will change. Material changes will be noted in the application's store listing release notes.</p>
+<h2 id="11-contact">11. Contact</h2>
+<p>Questions about this privacy policy, or about privacy in QuestGun generally:</p>
+<ul>
+  <li><strong>GitHub:</strong> <a href="https://github.com/sludgesoft-a11y">https://github.com/sludgesoft-a11y</a></li>
+  <li><strong>Email:</strong> &lt;sludgesoft@gmail.com&gt;</li>
+</ul>
+<hr>
+<p><em>QuestGun is not affiliated with, endorsed by, or associated with Meta Platforms, Inc., the libretro project, or any manufacturer or rights holder of any arcade or console hardware or software.</em></p>
+<p class="backlink"><a href="index.html">&larr; sludgesoft.github.io</a></p>
+</main>
+
+<footer>
+  <div class="wrap footrow">
+    <span>&copy; <span id="yr">2026</span> SludgeSoft</span>
+    <span class="sep"></span>
+    <a href="support.html">Support</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="terms.html">Terms</a>
+    <a href="https://github.com/sludgesoft-a11y">GitHub</a>
+  </div>
+</footer>
+
+<script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+</body>
+</html>

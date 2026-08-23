@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>QuestGun — a virtual lightgun arcade cabinet for Meta Quest</title>
+<meta name="description" content="QuestGun turns your Touch controllers into arcade lightguns on Meta Quest 3 and 3S. A frontend for libretro emulator cores — no games, BIOS files or emulators included.">
+<meta property="og:title" content="QuestGun — virtual lightgun arcade cabinet for Meta Quest">
+<meta property="og:description" content="Your Touch controllers become arcade lightguns. A frontend for libretro cores — you supply the cores and games.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 108 108'%3E%3Crect width='108' height='108' fill='%2305080d'/%3E%3Cg fill='none' stroke='%232ec4ba' stroke-width='6'%3E%3Cpath d='M54 33a21 21 0 0 1 14.85 6.15'/%3E%3Cpath d='M75 54a21 21 0 0 1-6.15 14.85'/%3E%3Cpath d='M54 75a21 21 0 0 1-14.85-6.15'/%3E%3Cpath d='M33 54a21 21 0 0 1 6.15-14.85'/%3E%3C/g%3E%3Ccircle cx='54' cy='54' r='4.5' fill='%23ff3626'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<header>
+  <div class="wrap bar">
+    <svg class="mark" viewBox="0 0 108 108" aria-hidden="true">
+      <g fill="none" stroke="#2ec4ba" stroke-width="6">
+        <path d="M54 33a21 21 0 0 1 14.85 6.15"/>
+        <path d="M75 54a21 21 0 0 1-6.15 14.85"/>
+        <path d="M54 75a21 21 0 0 1-14.85-6.15"/>
+        <path d="M33 54a21 21 0 0 1 6.15-14.85"/>
+      </g>
+      <g stroke="#1a6868" stroke-width="3">
+        <path d="M54 27.5v9M54 71.5v9M27.5 54h9M71.5 54h9"/>
+      </g>
+      <circle cx="54" cy="54" r="4.5" fill="#ff3626"/>
+      <circle cx="54" cy="54" r="1.8" fill="#ffe2d6"/>
+    </svg>
+    <div class="wordmark"><a href="index.html">Sludge<span>Soft</span></a></div>
+    <nav>
+      <a href="questgun.html" aria-current="page">QuestGun</a>
+      <a href="guide.html">Guide</a>
+      <a href="compatibility.html">What runs</a>
+      <a href="support.html">Support</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <div class="wrap hero">
+    <div class="kicker">Meta Quest 3 &amp; 3S</div>
+    <h1><em>QuestGun</em><br>The cabinet, not<br>the emulator.</h1>
+    <p class="lede">A virtual lightgun arcade cabinet you can stand in. Your Touch
+    controllers become the guns; the game plays on a screen the size of a wall.
+    <strong>QuestGun ships with no games, no BIOS files and no emulators</strong>
+    &mdash; you supply your own.</p>
+  </div>
+
+  <section>
+    <div class="wrap">
+      <h2>What it is</h2>
+      <div class="prose">
+        <p>QuestGun is a <strong>frontend</strong>. It provides the room, the
+        screen and the gun, and it hosts libretro emulator <em>cores</em> that are
+        loaded at runtime from files you place on your headset. One app therefore
+        covers whatever the core you installed can run.</p>
+        <p>Aiming works the way the original cabinet did. The shot is a ray cast
+        from the barrel of the gun, not from your eye, so leaning to look around
+        cover or holding the gun out to one side moves your point of impact
+        exactly as it did on a real machine. Reloading is done by aiming off the
+        edge of the screen and pulling the trigger. Credits go in before Start,
+        because MAME emulates the coin slot too.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2>What you need</h2>
+      <dl class="facts">
+        <div class="fact"><dt>Headset</dt><dd>Meta Quest 3 or 3S, both Touch controllers</dd></div>
+        <div class="fact"><dt>Play space</dt><dd>Standing, roomscale. One player</dd></div>
+        <div class="fact"><dt>An emulator core</dt><dd>Android arm64-v8a build, copied to the headset by you</dd></div>
+        <div class="fact"><dt>Game files</dt><dd>Yours, from software you are entitled to use</dd></div>
+      </dl>
+      <div class="prose" style="margin-top:26px">
+        <p>A fresh install cannot run anything until you add a core and a game.
+        Copy them over USB, or with SideQuest's file manager, into the app's own
+        folder &mdash; no special permissions needed. The
+        <a href="guide.html">player's guide</a> walks through it.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2>Features</h2>
+      <article class="card">
+        <h3>In the cabinet</h3>
+        <p class="sub">Everything below is running on-device today</p>
+        <ul class="tags">
+          <li>Parallax raycast aiming</li>
+          <li>Off-screen reload</li>
+          <li>Pedal on the grip</li>
+          <li>Coin on both hands</li>
+          <li>Adjustable screen distance &amp; width</li>
+          <li>Gun pitch / yaw calibration</li>
+          <li>Left or right handed</li>
+          <li>Procedural gun model</li>
+          <li>In-VR core &amp; ROM browser</li>
+          <li>Autoload on launch</li>
+          <li>Quad-layer compositing</li>
+          <li>72 fps held in headset</li>
+        </ul>
+        <div class="links">
+          <a class="btn primary" href="guide.html">Read the guide</a>
+          <a class="btn" href="compatibility.html">See what runs</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap prose">
+      <h2>Being straight with you</h2>
+      <p><strong>Classic 2D arcade lightgun hardware is what this is for.</strong>
+      A Namco System 22 lightgun board is measured running at full speed. Later
+      3D arcade hardware &mdash; Namco System 23, Sega Model 2, NAOMI &mdash; has
+      working drivers in MAME but is beyond what a mobile processor can emulate
+      at playable speed, and no update to QuestGun changes that. Dreamcast and
+      NAOMI via Flycast do not currently work at all.</p>
+      <p>Settings are not yet saved between launches, there are no save states,
+      and it is one player only. The
+      <a href="compatibility.html">compatibility page</a> lists every claim with
+      whether it was measured, inferred or untested.</p>
+      <p><strong>Content is entirely your responsibility.</strong> QuestGun
+      supplies no games, no BIOS images and no cores, links to none, downloads
+      none, and has no network permission with which to do so. You must have the
+      lawful right to possess and use every file you install. See the
+      <a href="terms.html">terms</a>.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap prose">
+      <h2>Privacy, in one line</h2>
+      <p>QuestGun requests <strong>no Android permissions at all</strong>, including
+      no internet permission, and contains no analytics, advertising or crash
+      reporting. It is not that it chooses not to send data &mdash; it is
+      technically incapable of sending any. Full detail in the
+      <a href="privacy.html">privacy policy</a>.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap prose">
+      <h2>Get in touch</h2>
+      <p><a href="mailto:sludgesoft@gmail.com">sludgesoft@gmail.com</a> &mdash; bug
+      reports, compatibility results and questions all welcome. See the
+      <a href="support.html">support page</a> for what to include.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap footrow">
+    <span>&copy; <span id="yr">2026</span> SludgeSoft</span>
+    <span class="sep"></span>
+    <a href="support.html">Support</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="terms.html">Terms</a>
+    <a href="https://github.com/sludgesoft-a11y">GitHub</a>
+  </div>
+</footer>
+
+<script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+</body>
+</html>

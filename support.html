@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Support — QuestGun</title>
+<meta name="description" content="Support for QuestGun: common problems, how to report a bug, compatibility results, and contact details for SludgeSoft.">
+<meta property="og:title" content="Support — QuestGun">
+<meta property="og:description" content="Support for QuestGun: common problems, how to report a bug, compatibility results, and contact details for SludgeSoft.">
+<meta property="og:type" content="article">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 108 108'%3E%3Crect width='108' height='108' fill='%2305080d'/%3E%3Cg fill='none' stroke='%232ec4ba' stroke-width='6'%3E%3Cpath d='M54 33a21 21 0 0 1 14.85 6.15'/%3E%3Cpath d='M75 54a21 21 0 0 1-6.15 14.85'/%3E%3Cpath d='M54 75a21 21 0 0 1-14.85-6.15'/%3E%3Cpath d='M33 54a21 21 0 0 1 6.15-14.85'/%3E%3C/g%3E%3Ccircle cx='54' cy='54' r='4.5' fill='%23ff3626'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<header>
+  <div class="wrap bar">
+    <svg class="mark" viewBox="0 0 108 108" aria-hidden="true">
+      <g fill="none" stroke="#2ec4ba" stroke-width="6">
+        <path d="M54 33a21 21 0 0 1 14.85 6.15"/>
+        <path d="M75 54a21 21 0 0 1-6.15 14.85"/>
+        <path d="M54 75a21 21 0 0 1-14.85-6.15"/>
+        <path d="M33 54a21 21 0 0 1 6.15-14.85"/>
+      </g>
+      <g stroke="#1a6868" stroke-width="3">
+        <path d="M54 27.5v9M54 71.5v9M27.5 54h9M71.5 54h9"/>
+      </g>
+      <circle cx="54" cy="54" r="4.5" fill="#ff3626"/>
+      <circle cx="54" cy="54" r="1.8" fill="#ffe2d6"/>
+    </svg>
+    <div class="wordmark"><a href="index.html">Sludge<span>Soft</span></a></div>
+    <nav>
+      <a href="questgun.html">QuestGun</a>
+      <a href="guide.html">Guide</a>
+      <a href="compatibility.html">What runs</a>
+      <a href="support.html" aria-current="page">Support</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main" class="wrap doc">
+<h1 id="support">Support</h1>
+<p class="meta"><strong>Application:</strong> QuestGun (<code>com.questgun.arcade</code>)<br>
+<strong>Publisher:</strong> SludgeSoft<br>
+<strong>Email:</strong> &lt;sludgesoft@gmail.com&gt;</p>
+<p>QuestGun is made by one person. Email is read, and every message gets a reply — usually within a few days, occasionally longer.</p>
+<hr>
+<h2 id="before-you-write">Before you write</h2>
+<p>Most problems have a known answer already:</p>
+<ul>
+  <li><strong><a href="guide.html">The player's guide</a></strong> covers setup, where files go, the controls, aiming calibration, the menu, and a troubleshooting list.</li>
+  <li><strong><a href="compatibility.html">What runs</a></strong> covers whether a particular game or console can work at all on this hardware.</li>
+</ul>
+<h3 id="the-three-things-that-catch-nearly-everybody">The three things that catch nearly everybody</h3>
+<ol>
+  <li><strong>Nothing happens when I press Start.</strong> You have no credits. Press <strong>Left X</strong> or <strong>Right B</strong> to insert a coin first — arcade machines take money, and MAME emulates that faithfully.</li>
+  <li><strong>"Core rejected content".</strong> Your game file does not match the MAME version your core was built from. Try the same game under a different core with <strong>LOAD CORE</strong>; it reloads in seconds.</li>
+  <li><strong>The ROM list is empty.</strong> Files must be inside <code>roms/</code>, and a multi-track disc game needs its own folder with the <code>.gdi</code> or <code>.cue</code> beside its tracks.</li>
+</ol>
+<hr>
+<h2 id="reporting-a-bug">Reporting a bug</h2>
+<p>Email &lt;sludgesoft@gmail.com&gt; and include as much of this as you can:</p>
+<ul>
+  <li><strong>Headset</strong> — Quest 3 or 3S</li>
+  <li><strong>QuestGun version</strong> — shown in the store listing; e.g. 0.1.1</li>
+  <li><strong>The core</strong> — exact file name, e.g. <code>mamearcade_libretro_android.so</code></li>
+  <li><strong>The game</strong> — its file name, e.g. <code>mygame.zip</code></li>
+  <li><strong>What happened</strong> — and what you expected instead</li>
+  <li><strong>Whether it happens every time</strong></li>
+</ul>
+<p>If the app closed on its own, say what was on screen immediately before. If a game loaded but ran badly, an estimate of how badly is useful.</p>
+<p><strong>Please do not send game files, BIOS images or ROMs.</strong> They are not needed to diagnose anything, and they will be deleted unread.</p>
+<hr>
+<h2 id="reporting-a-game-that-works">Reporting a game that works</h2>
+<p>Compatibility results are genuinely useful, and the <a href="compatibility.html">what runs</a> page is built from them. If you get something running, send the game name, the core, and roughly how it performed. Results that go on the page are credited as measured by a player unless you would rather they were not.</p>
+<hr>
+<h2 id="what-we-cannot-help-with">What we cannot help with</h2>
+<ul>
+  <li><strong>Finding games, ROMs, BIOS files or disc images.</strong> We do not supply, host, link to or assist in obtaining any of it, and requests are declined. See the <a href="terms.html">terms</a>.</li>
+  <li><strong>Faults inside third-party emulator cores.</strong> Cores are independent software under their own licences. Flycast's crash on Quest, for instance, is <a href="compatibility.html">documented here</a> but is not ours to fix.</li>
+  <li><strong>Making a game run faster than the headset's processor allows.</strong> If a board is too demanding, no setting changes that.</li>
+</ul>
+<hr>
+<h2 id="refunds-and-store-issues">Refunds and store issues</h2>
+<p>Purchases, refunds and downloads are handled by the Meta Horizon Store under Meta's own policies, not by SludgeSoft. Use the store's refund process for anything billing-related. If the reason for the refund is a fault in QuestGun, an email telling us what went wrong is appreciated even so.</p>
+<hr>
+<h2 id="privacy-and-legal">Privacy and legal</h2>
+<ul>
+  <li><a href="privacy.html">Privacy policy</a> — QuestGun collects no data of any kind</li>
+  <li><a href="terms.html">Terms and conditions</a> — licence, user-supplied content, health and safety</li>
+</ul>
+<p>Postal address for legal correspondence is available on request by email.</p>
+<p class="backlink"><a href="index.html">&larr; sludgesoft.github.io</a></p>
+</main>
+
+<footer>
+  <div class="wrap footrow">
+    <span>&copy; <span id="yr">2026</span> SludgeSoft</span>
+    <span class="sep"></span>
+    <a href="support.html">Support</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="terms.html">Terms</a>
+    <a href="https://github.com/sludgesoft-a11y">GitHub</a>
+  </div>
+</footer>
+
+<script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+</body>
+</html>

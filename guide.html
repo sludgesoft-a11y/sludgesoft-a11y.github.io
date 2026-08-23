@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>QuestGun — Player&#x27;s Guide</title>
+<meta name="description" content="How to set up and play QuestGun: adding emulator cores and games, controls, aiming calibration, the in-VR menu, and troubleshooting.">
+<meta property="og:title" content="QuestGun — Player&#x27;s Guide">
+<meta property="og:description" content="How to set up and play QuestGun: adding emulator cores and games, controls, aiming calibration, the in-VR menu, and troubleshooting.">
+<meta property="og:type" content="article">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 108 108'%3E%3Crect width='108' height='108' fill='%2305080d'/%3E%3Cg fill='none' stroke='%232ec4ba' stroke-width='6'%3E%3Cpath d='M54 33a21 21 0 0 1 14.85 6.15'/%3E%3Cpath d='M75 54a21 21 0 0 1-6.15 14.85'/%3E%3Cpath d='M54 75a21 21 0 0 1-14.85-6.15'/%3E%3Cpath d='M33 54a21 21 0 0 1 6.15-14.85'/%3E%3C/g%3E%3Ccircle cx='54' cy='54' r='4.5' fill='%23ff3626'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<header>
+  <div class="wrap bar">
+    <svg class="mark" viewBox="0 0 108 108" aria-hidden="true">
+      <g fill="none" stroke="#2ec4ba" stroke-width="6">
+        <path d="M54 33a21 21 0 0 1 14.85 6.15"/>
+        <path d="M75 54a21 21 0 0 1-6.15 14.85"/>
+        <path d="M54 75a21 21 0 0 1-14.85-6.15"/>
+        <path d="M33 54a21 21 0 0 1 6.15-14.85"/>
+      </g>
+      <g stroke="#1a6868" stroke-width="3">
+        <path d="M54 27.5v9M54 71.5v9M27.5 54h9M71.5 54h9"/>
+      </g>
+      <circle cx="54" cy="54" r="4.5" fill="#ff3626"/>
+      <circle cx="54" cy="54" r="1.8" fill="#ffe2d6"/>
+    </svg>
+    <div class="wordmark"><a href="index.html">Sludge<span>Soft</span></a></div>
+    <nav>
+      <a href="questgun.html">QuestGun</a>
+      <a href="guide.html" aria-current="page">Guide</a>
+      <a href="compatibility.html">What runs</a>
+      <a href="support.html">Support</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main" class="wrap doc">
+<h1 id="questgun-players-guide">QuestGun — Player's Guide</h1>
+<p>A virtual lightgun arcade cabinet for Meta Quest. Your Touch controller becomes an arcade gun, and the game plays on a large screen floating in front of you.</p>
+<p><strong>QuestGun is not an emulator and ships with no games.</strong> It loads emulator cores and game files that you supply. A fresh install cannot do anything until you add them — see <a href="#2-getting-started">Getting started</a>.</p>
+<hr>
+<h2 id="1-quick-reference">1. Quick reference</h2>
+<div class="tablewrap">
+<table>
+<thead><tr>
+<th>Control</th>
+<th>Action</th>
+</tr></thead>
+<tbody>
+<tr><td><strong>Left X</strong> <em>or</em> <strong>Right B</strong></td><td><strong>Insert coin — press this first, before every game</strong></td></tr>
+<tr><td>Right A</td><td>Start</td></tr>
+<tr><td>Right trigger</td><td>Fire</td></tr>
+<tr><td>Right grip</td><td>Pedal (duck / take cover)</td></tr>
+<tr><td>Left Y</td><td>Recentre the screen on where you are looking</td></tr>
+<tr><td>Either thumbstick click</td><td>Open / close the menu</td></tr>
+</tbody>
+</table>
+</div>
+<p>Credits are on both hands so you can add them without lowering the gun.</p>
+<p><strong>To reload</strong>, aim off the edge of the screen and pull the trigger, exactly as on a real cabinet. There is no reload button.</p>
+<h3 id="starting-a-game-the-bit-everyone-gets-stuck-on">Starting a game — the bit everyone gets stuck on</h3>
+<p>Arcade machines take money. MAME faithfully emulates that, so a game will sit on its attract screen ignoring you until you pay.</p>
+<ol>
+  <li><strong>Press Left X or Right B</strong> to insert a coin. Press two or three times for extra credits if you like.</li>
+  <li><strong>Press Right A</strong> to start.</li>
+</ol>
+<p>If nothing happens when you press A, you have no credits. Press coin again. This catches everybody at least once — the game looks like it is running, because the attract mode is running, but it is not listening for Start.</p>
+<hr>
+<h2 id="2-getting-started">2. Getting started</h2>
+<h3 id="what-you-need">What you need</h3>
+<ul>
+  <li>A Meta Quest headset with both Touch controllers</li>
+  <li>An emulator <strong>core</strong> (see <a href="#4-supported-cores">Supported cores</a>)</li>
+  <li>Game files you are legally entitled to use</li>
+</ul>
+<p>You must supply your own game and BIOS files, from hardware you own. None are included and none are downloaded for you.</p>
+<h3 id="where-files-go">Where files go</h3>
+<p>Everything lives under the app's own folder, reachable over USB with no special permissions:</p>
+<pre><code>Android/data/com.questgun.arcade/files/
+├── cores/     emulator cores (*.so)
+├── roms/      your games
+├── system/    BIOS files, if a core needs them
+└── saves/     created for you</code></pre>
+<p>Copy files there with a USB cable and your computer's file browser, or with SideQuest's file manager.</p>
+<p><strong>Multi-file disc games</strong> — a <code>.gdi</code> or <code>.cue</code> refers to separate track files that must sit beside it. Give each of those games its own folder inside <code>roms/</code>:</p>
+<pre><code>roms/
+├── mygame.zip                      a single-file game
+└── My Disc Game/                   a disc game
+    ├── My Disc Game.gdi
+    └── My Disc Game (Track 1).bin</code></pre>
+<p>The menu shows the <code>.gdi</code> or <code>.cue</code> and hides the track files, which are not loadable on their own.</p>
+<h3 id="choosing-what-runs">Choosing what runs</h3>
+<p>Open the menu (<strong>click either thumbstick</strong>), pick <strong>LOAD CORE</strong>, then <strong>LOAD ROM</strong>. That is all most people need.</p>
+<p>To have something load automatically at startup, create a file called <code>autoload.txt</code> in the <code>files/</code> folder:</p>
+<pre><code>core = mamearcade_libretro_android.so
+rom = mygame.zip</code></pre>
+<hr>
+<h2 id="3-playing">3. Playing</h2>
+<p>The screen appears in front of you at launch. If it is off to one side, look straight ahead and <strong>press Left Y</strong> to recentre it.</p>
+<p>Point the gun at the screen. A <strong>red laser dot</strong> shows where you are aiming, and your shots land there. The dot turns orange while the pedal is held.</p>
+<p>Hold the gun like a pistol and aim down it. Do not try to line up the dot by moving your head — the gun's barrel is the aiming line, exactly as on a real cabinet.</p>
+<h3 id="if-your-shots-land-slightly-off">If your shots land slightly off</h3>
+<p>This is normal and adjustable. Touch controllers held like a pistol tend to shoot a little high of where you think you are pointing.</p>
+<p>Open the menu and adjust <strong>GUN PITCH</strong> (up/down) and <strong>GUN YAW</strong> (left/right) until the dot sits where you are actually aiming. Small values — a degree or two — are usually all it takes.</p>
+<h3 id="the-menu">The menu</h3>
+<p>Click either thumbstick to open it. It appears to your gun-hand side, clear of the screen. Aim at it with the gun; the row under your aim highlights. <strong>Trigger</strong> selects, and <strong>either thumbstick left/right</strong> changes values (hold to repeat).</p>
+<p>While the menu is open the game receives no input, so nothing is fired into it behind the panel.</p>
+<div class="tablewrap">
+<table>
+<thead><tr>
+<th>Menu item</th>
+<th>What it does</th>
+</tr></thead>
+<tbody>
+<tr><td>RESUME</td><td>Close the menu</td></tr>
+<tr><td>LOAD ROM</td><td>Browse and load a game</td></tr>
+<tr><td>LOAD CORE</td><td>Switch emulator core, keeping the current game</td></tr>
+<tr><td>RECENTRE SCREEN</td><td>Put the screen where you are looking</td></tr>
+<tr><td>SCREEN DISTANCE</td><td>How far away the screen sits (1–12 m)</td></tr>
+<tr><td>SCREEN WIDTH</td><td>How large the screen is (1–16 m)</td></tr>
+<tr><td>SCREEN YAW TRIM</td><td>Slide the screen left or right around you</td></tr>
+<tr><td>GUN PITCH / GUN YAW</td><td>Aim calibration</td></tr>
+<tr><td>GUN HAND</td><td>Left or right handed</td></tr>
+<tr><td>SHOW GUN</td><td>Draw the gun model in your hand</td></tr>
+<tr><td>LASER SIGHT</td><td>Show the red aiming dot</td></tr>
+<tr><td>RESET GAME</td><td>Restart the current game</td></tr>
+<tr><td>EXIT QUESTGUN</td><td>Quit</td></tr>
+</tbody>
+</table>
+</div>
+<p>Settings are not saved between launches yet.</p>
+<h3 id="quick-adjustments-without-the-menu">Quick adjustments without the menu</h3>
+<p><strong>Hold Left grip</strong> and the sticks retune the setup directly. Nothing reaches the game while you hold it.</p>
+<div class="tablewrap">
+<table>
+<thead><tr>
+<th>Input</th>
+<th>Adjusts</th>
+</tr></thead>
+<tbody>
+<tr><td>Right stick ↕</td><td>Screen distance</td></tr>
+<tr><td>Right stick ↔</td><td>Slide the screen left / right</td></tr>
+<tr><td>Right stick ↔ <em>and Left trigger</em></td><td>Screen width</td></tr>
+<tr><td>Left stick ↕</td><td>Gun pitch</td></tr>
+<tr><td>Left stick ↔</td><td>Gun yaw</td></tr>
+</tbody>
+</table>
+</div>
+<h3 id="full-control-list">Full control list</h3>
+<div class="tablewrap">
+<table>
+<thead><tr>
+<th>Right (gun) hand</th>
+<th></th>
+</tr></thead>
+<tbody>
+<tr><td>Trigger</td><td>Fire</td></tr>
+<tr><td>Grip</td><td>Pedal — duck and take cover</td></tr>
+<tr><td>A</td><td>Start</td></tr>
+<tr><td>B</td><td>Insert coin</td></tr>
+<tr><td>Thumbstick click</td><td>Menu</td></tr>
+</tbody>
+</table>
+</div>
+<div class="tablewrap">
+<table>
+<thead><tr>
+<th>Left (off) hand</th>
+<th></th>
+</tr></thead>
+<tbody>
+<tr><td>X</td><td>Insert coin</td></tr>
+<tr><td>Y</td><td>Recentre the screen</td></tr>
+<tr><td>Grip (hold)</td><td>Quick adjust mode</td></tr>
+<tr><td>Thumbstick</td><td>D-pad</td></tr>
+<tr><td>Thumbstick click</td><td>Menu</td></tr>
+</tbody>
+</table>
+</div>
+<p>Swap hands with <strong>GUN HAND</strong> in the menu; everything above mirrors.</p>
+<hr>
+<h2 id="4-supported-cores">4. Supported cores</h2>
+<p>Cores are not bundled. Download the Android <strong>arm64-v8a</strong> build of the core you want and copy it into <code>cores/</code>.</p>
+<div class="tablewrap">
+<table>
+<thead><tr>
+<th>Core</th>
+<th>Runs</th>
+<th>Status</th>
+</tr></thead>
+<tbody>
+<tr><td><strong>mamearcade</strong> (current MAME)</td><td>Arcade</td><td><strong>Recommended.</strong> Widest game list. ~250 MB</td></tr>
+<tr><td><strong>mame2003-plus</strong></td><td>Arcade</td><td>Fast and light. Best for older games</td></tr>
+<tr><td>mame2010</td><td>Arcade</td><td>Middle ground</td></tr>
+<tr><td>pcsx_rearmed</td><td>PlayStation</td><td>Installed and configured, not yet proven</td></tr>
+<tr><td>swanstation</td><td>PlayStation</td><td>Installed and configured, not yet proven</td></tr>
+<tr><td>Flycast</td><td>Dreamcast / NAOMI</td><td><strong>Does not work on Quest</strong> — see below</td></tr>
+</tbody>
+</table>
+</div>
+<h3 id="match-your-games-to-your-core">Match your games to your core</h3>
+<p><strong>This is the most common cause of "the game will not load."</strong> MAME game files are tied to the MAME version a core was built from. A file built for current MAME will be rejected by an older core, and the reverse is equally true.</p>
+<ul>
+  <li><strong>mamearcade</strong> wants current MAME files</li>
+  <li><strong>mame2003-plus</strong> wants MAME 0.78-era files</li>
+  <li><strong>mame2010</strong> wants MAME 0.139-era files</li>
+</ul>
+<p>Short names can differ between MAME versions too, so the same game may be both the wrong contents <em>and</em> the wrong file name under a different core.</p>
+<p>If a game will not load, try the same file under a different core before assuming the file is bad. <strong>LOAD CORE</strong> keeps your selected game and reloads it under the new core, so this takes seconds.</p>
+<h3 id="flycast-dreamcast-and-naomi-does-not-currently-work">Flycast (Dreamcast and NAOMI) does not currently work</h3>
+<p>Dreamcast and NAOMI games load completely — BIOS, game, graphics and sound all initialise — and then the app closes as soon as the game starts running. This is a fault inside the Flycast core on this hardware, not something you have set up wrongly, and it happens with every Flycast build tested.</p>
+<p>Use MAME instead. If a Flycast game does crash the app, the next launch skips it automatically and drops you into the menu rather than crashing again.</p>
+<hr>
+<h2 id="5-troubleshooting">5. Troubleshooting</h2>
+<p><strong>"Core rejected content"</strong> — the core has no driver for that game, or your game file is for a different MAME version. Try another core via <strong>LOAD CORE</strong>.</p>
+<p><strong>Nothing happens when I press Start</strong> — you have no credits. Press <strong>Left X</strong> or<br>
+<strong>Right B</strong>.</p>
+<p><strong>There are two aiming marks on screen</strong> — QuestGun hides MAME's own crosshair by writing a config file for each game the first time you load it, leaving just the red laser dot. If you have previously changed crosshair settings inside MAME's own menu, your file is kept and MAME's crosshair may still appear; delete <code>system/mame/cfg/&amp;lt;game&amp;gt;.cfg</code> and reload to get the default back.</p>
+<p><strong>The screen is off to one side</strong> — look straight ahead and press <strong>Left Y</strong>. If it is still slightly off, hold Left grip and nudge it with the right stick.</p>
+<p><strong>My shots land near, but not on, the target</strong> — adjust GUN PITCH and GUN YAW in the menu.</p>
+<p><strong>Shots land in the centre no matter where I aim</strong> — the core is not receiving the gun's position. Check you are using a supported core.</p>
+<p><strong>The ROM list is empty</strong> — files must be inside <code>roms/</code>. A disc game must be in its own folder with its <code>.gdi</code> or <code>.cue</code> beside its track files.</p>
+<p><strong>The app opened straight into the menu saying the last launch crashed</strong> — that is deliberate. The previous game brought the app down, so it started without loading anything. Pick something else.</p>
+<hr>
+<h2 id="6-what-this-app-does-not-do">6. What this app does not do</h2>
+<ul>
+  <li>It contains no games, no BIOS files and no emulator cores</li>
+  <li>It does not download anything for you</li>
+  <li>It does not save your settings between launches yet</li>
+  <li>It cannot make a game run faster than the headset's processor allows</li>
+</ul>
+<p>Games that were designed for hardware far newer than the Quest's chip may load and still run too slowly to enjoy. That is a limit of the hardware, not a setting that can be changed.</p>
+<p class="backlink"><a href="index.html">&larr; sludgesoft.github.io</a></p>
+</main>
+
+<footer>
+  <div class="wrap footrow">
+    <span>&copy; <span id="yr">2026</span> SludgeSoft</span>
+    <span class="sep"></span>
+    <a href="support.html">Support</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="terms.html">Terms</a>
+    <a href="https://github.com/sludgesoft-a11y">GitHub</a>
+  </div>
+</footer>
+
+<script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+</body>
+</html>
